@@ -1,31 +1,44 @@
-CREATE TABLE AC_Product
-(  
-Product_ID	int NOT NULL,
-Product_Name	varchar(50),
-SKU_ID	int,
-Model_Number	varchar(20),
-Product_Description	varchar(200),
-Source_Country	varchar(2),
-SRP	decimal(18,2),
-Price_Desc	varchar(250),
-Promo_Price	decimal(18,2),
-product_url	varchar(2000),
-detail_url	varchar(500),
-image_url	varchar(500),
-prod_url_valid	bit,
-prod_url_tested	smalldatetime,
-Accessory_flag	varchar(1),
-family_name	varchar(100),
-support_only	varchar(4),
-friendly_name	varchar(50),
-saving_amount	decimal(18,2),
-percent_off	decimal(38,15),
-ecommerceFlag	varchar(1),
-eol_flg	bit,
-Src_Sys_Product_ID	varchar(20),
-Merkle_Category_Name	varchar(50),
-Product_Division_Name	varchar(50),
-Product_Group_Name	varchar(50),
-Product_Category_Name	varchar(50),
-Product_SubCategory_Name	varchar(50)
-)
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[AC_PRODUCT](
+	[PRODUCT_ID] [int] NOT NULL,
+	[PRODUCT_NAME] [varchar](50) NULL,
+	[SKU_ID] [int] NULL,
+	[MODEL_NUMBER] [varchar](20) NULL,
+	[PRODUCT_DESCRIPTION] [varchar](200) NULL,
+	[SOURCE_COUNTRY] [varchar](2) NULL,
+	[SRP] [decimal](18, 2) NULL,
+	[PRICE_DESC] [varchar](250) NULL,
+	[PROMO_PRICE] [decimal](18, 2) NULL,
+	[PRODUCT_URL] [varchar](2000) NULL,
+	[DETAIL_URL] [varchar](500) NULL,
+	[IMAGE_URL] [varchar](500) NULL,
+	[PROD_URL_VALID] [bit] NULL,
+	[PROD_URL_TESTED] [smalldatetime] NULL,
+	[ACCESSORY_FLAG] [varchar](1) NULL,
+	[FAMILY_NAME] [varchar](100) NULL,
+	[SUPPORT_ONLY] [varchar](4) NULL,
+	[FRIENDLY_NAME] [varchar](50) NULL,
+	[SAVING_AMOUNT] [decimal](18, 2) NULL,
+	[PERCENT_OFF] [decimal](38, 15) NULL,
+	[ECOMMERCEFLAG] [varchar](1) NULL,
+	[EOL_FLG] [bit] NULL,
+	[SRC_SYS_PRODUCT_ID] [varchar](20) NULL,
+	[MERKLE_CATEGORY_NAME] [varchar](50) NULL,
+	[PRODUCT_DIVISION_NAME] [varchar](50) NULL,
+	[PRODUCT_GROUP_NAME] [varchar](50) NULL,
+	[PRODUCT_CATEGORY_NAME] [varchar](50) NULL,
+	[PRODUCT_SUBCATEGORY_NAME] [varchar](50) NULL,
+	[DATAMART_ACCOUNT_DATE] [datetime] NOT NULL,
+ CONSTRAINT [PK_AC_PRODUCT] PRIMARY KEY CLUSTERED 
+(
+	[PRODUCT_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+

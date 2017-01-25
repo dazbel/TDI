@@ -1,23 +1,34 @@
- CREATE TABLE AC_Product_Pivot
-(  
-Registration_ID	int NOT NULL,
-Email_Address_ID	int,
-Email_Address	varchar(255) NOT NULL,
-Src_Sys_Customer_ID	varchar(20),
-Src_Sys_Registration_ID	varchar(20) NOT NULL,
-Sequence_Num	int,
-Registration_Date	datetime NOT NULL,
-Product_ID	int,
-Source_ID	int NOT NULL,
-Serial_Number_Txt	varchar(40),
-Carrier_ID	int,
-Purchase_Store_Name	varchar(50),
-Purchase_Store_Country	varchar(50),
-Purchase_Date	datetime,
-Purchase_Store_City	varchar(50),
-Purchase_Store_State	varchar(20),
-Warranty_Ind	bit,
-Company_Code	varchar(4),
-bogus_serial_flag	bit
+SET ANSI_NULLS ON
+GO
 
-)
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[AC_PRODUCT_PIVOT](
+	[REGISTRATION_ID] [int] NOT NULL,
+	[EMAIL_ADDRESS_ID] [int] NULL,
+	[EMAIL_ADDRESS] [varchar](255) NOT NULL,
+	[SRC_SYS_CUSTOMER_ID] [varchar](20) NULL,
+	[SRC_SYS_REGISTRATION_ID] [varchar](20) NOT NULL,
+	[SEQUENCE_NUM] [int] NULL,
+	[REGISTRATION_DATE] [datetime] NOT NULL,
+	[PRODUCT_ID] [int] NULL,
+	[SOURCE_ID] [int] NOT NULL,
+	[SERIAL_NUMBER_TXT] [varchar](40) NULL,
+	[CARRIER_ID] [int] NULL,
+	[PURCHASE_STORE_NAME] [varchar](50) NULL,
+	[PURCHASE_STORE_COUNTRY] [varchar](50) NULL,
+	[PURCHASE_DATE] [datetime] NULL,
+	[PURCHASE_STORE_CITY] [varchar](50) NULL,
+	[PURCHASE_STORE_STATE] [varchar](20) NULL,
+	[WARRANTY_IND] [bit] NULL,
+	[COMPANY_CODE] [varchar](4) NULL,
+	[BOGUS_SERIAL_FLAG] [bit] NULL,
+ CONSTRAINT [PK_AC_ProductPivot] PRIMARY KEY CLUSTERED 
+(
+	[REGISTRATION_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
